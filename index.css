@@ -1,0 +1,86 @@
+html,
+        body,
+        #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+
+        .esri-component {
+            display: none;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        #overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #overlay-content {
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            user-select: none;
+        }
+
+        #overlay-content h1 {
+            margin: 0 0 15px;
+            font-size: 24px;
+        }
+
+        #overlay-content p {
+            margin: 0;
+            font-size: 23px;
+        }
+
+        /* Zoom buttons styling */
+        .zoom-controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            z-index: 10000;
+        }
+
+        .zoom-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            width: 40px;
+            height: 40px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+
+        .zoom-button:hover {
+            background-color: #555;
+        }
