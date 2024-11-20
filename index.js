@@ -4,7 +4,6 @@ require(["esri/Map", "esri/views/MapView", "esri/Graphic", "dojo/domReady!"], fu
     function getParameterByName(name) {
         const regex = new RegExp(`[?&]${name}=([^&]*)`);
         const results = regex.exec(window.location.search);
-        console.log(decodeURIComponent(results[1]))
         return results ? decodeURIComponent(results[1]) : '';
     }
     
@@ -16,7 +15,6 @@ require(["esri/Map", "esri/views/MapView", "esri/Graphic", "dojo/domReady!"], fu
     var outline = getParameterByName('outline');
 
     if (isNaN(lat) || isNaN(long)) {
-        console.error('Invalid latitude or longitude');
         return;
     }
 
@@ -118,7 +116,6 @@ require(["esri/Map", "esri/views/MapView", "esri/Graphic", "dojo/domReady!"], fu
 
     if (!isMobile()) {
         view.on('mouse-wheel', function(event) {
-            console.log('event: ', event)
             if (isCtrlOrCmdPressed) {
             } else {
                 showOverlay();
